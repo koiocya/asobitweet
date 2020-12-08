@@ -1,8 +1,10 @@
 <div class="contents row">
+ 
   <div class="container">
     <h3>投稿する</h3>
     <div class="content">
       <%= form_with(model: @tweet, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
     <div class="img-upload">
       <div class="img-text">
       投稿画像
@@ -55,7 +57,6 @@
     <div class="tweet-house_number">
       <div class="house_number-text">
       番地
-      <span class="indispensable">必須</span>
       </div>
       <%= f.text_field :house_number, placeholder: "番地" %>
     </div>
